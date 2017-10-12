@@ -8,9 +8,26 @@ int main() {
 	string str;
 	float a, c;
 	char b;
+	bool q = true;
 	getline(cin, str);
 	istringstream stream(str);
 	stream >> c;
+	while (stream >> b) {
+		if (b == '*') {
+			stream >> a;
+			c = c * a;
+		}
+		else if (b == '/') {
+			stream >> a;
+			if (a != 0) {
+				c = c / a;
+			}
+			else {
+				cout << "Devision by zero";
+				q = false;
+			}
+		}
+	}
 	while (stream >> b) {
 		if (b == '+') {
 			stream >> a;
@@ -21,20 +38,9 @@ int main() {
 			c = c - a;
 		}
 	}
-	        if (b == '*') {
-			stream >> a;
-			c = c * a;
-		}
-		else if (b == '/') {
-			stream >> a;
-			if (a != 0) {
-				c = c / a;
-			else {
-				cout << "zero error";
-			}
-		}
-	} 
-	cout << c;
+
+	if (q == true)
+		cout << c;
 	cin.get();
 	return 0;
 
