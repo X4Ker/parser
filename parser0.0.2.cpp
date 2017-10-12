@@ -21,6 +21,19 @@ int main() {
 			c = c - a;
 		}
 	}
+	        if (b == '*') {
+			stream >> a;
+			c = c * a;
+		}
+		else if (b == '/') {
+			stream >> a;
+			if (a != 0) {
+				c = c / a;
+			else {
+				cout << "zero error";
+			}
+		}
+	} 
 	cout << c;
 	cin.get();
 	return 0;
