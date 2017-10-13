@@ -8,7 +8,7 @@ string str(string s) {
 	char ops[4] = { '+', '-', '*', '/' };
 	int t;
 	for (int i = 0; i < 4; i++) {
-		t = s.find(ops[i]);
+		t = s.rfind(ops[i]);
 		if (t > 0) {
 			return str(s.substr(0, t)) + " " + str(s.substr((t + 1), s.length() - t - 1)) + " " + ops[i];
 		}
