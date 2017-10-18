@@ -67,6 +67,7 @@ float calc(string s) {
 	}
 	else {
 		cout << "Devision by zero";
+		return 0;
 	}
 }
 	
